@@ -44,7 +44,7 @@ export const challenges: Challenge[] = [
     category: 'crypto',
     difficulty: 'medium',
     points: 275,
-    description: 'You've intercepted an RSA-encrypted message along with some key parameters. Can you break the encryption and retrieve the original message?',
+    description: "You've intercepted an RSA-encrypted message along with some key parameters. Can you break the encryption and retrieve the original message?",
     solvedCount: 64
   },
   {
@@ -53,7 +53,7 @@ export const challenges: Challenge[] = [
     category: 'forensics',
     difficulty: 'easy',
     points: 125,
-    description: 'There's a hidden message in this image file. Use steganography techniques to extract the flag.',
+    description: "There's a hidden message in this image file. Use steganography techniques to extract the flag.",
     solvedCount: 176
   },
   {
@@ -62,7 +62,7 @@ export const challenges: Challenge[] = [
     category: 'forensics',
     difficulty: 'medium',
     points: 225,
-    description: 'We've captured network traffic during a suspected data exfiltration. Analyze the PCAP file and find what information was stolen.',
+    description: "We've captured network traffic during a suspected data exfiltration. Analyze the PCAP file and find what information was stolen.",
     solvedCount: 98
   },
   {
@@ -71,7 +71,7 @@ export const challenges: Challenge[] = [
     category: 'pwn',
     difficulty: 'medium',
     points: 350,
-    description: 'This program has a vulnerable function that doesn't check input length. Exploit the buffer overflow to gain control of the program flow.',
+    description: "This program has a vulnerable function that doesn't check input length. Exploit the buffer overflow to gain control of the program flow.",
     solvedCount: 42
   },
   {
@@ -80,7 +80,7 @@ export const challenges: Challenge[] = [
     category: 'pwn',
     difficulty: 'hard',
     points: 500,
-    description: 'The binary has stack protection enabled, but it's still vulnerable. Use a return-to-libc attack to bypass these protections.',
+    description: "The binary has stack protection enabled, but it's still vulnerable. Use a return-to-libc attack to bypass these protections.",
     solvedCount: 23
   },
   {
@@ -89,7 +89,7 @@ export const challenges: Challenge[] = [
     category: 'reverse',
     difficulty: 'medium',
     points: 300,
-    description: 'This executable checks for the correct password. Reverse engineer it to find what password it's looking for.',
+    description: "This executable checks for the correct password. Reverse engineer it to find what password it's looking for.",
     solvedCount: 57
   },
   {
