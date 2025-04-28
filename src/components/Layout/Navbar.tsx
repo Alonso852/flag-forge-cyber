@@ -1,11 +1,12 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flag, Menu, User, Trophy, BookOpen, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SignInDialog } from '../auth/SignInDialog';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,6 +14,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-cyber-dark/80 backdrop-blur-md border-b border-cyber-purple/20 py-3">
+      <SignInDialog isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Flag className="h-6 w-6 text-cyber-purple" />
@@ -21,7 +23,6 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
         
-        {/* Mobile menu button */}
         <button 
           onClick={toggleMenu}
           className="md:hidden p-2 text-cyber-purple hover:text-cyber-purple-dark transition-colors"
@@ -30,7 +31,6 @@ const Navbar: React.FC = () => {
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-6">
           <Link to="/challenges" className="text-foreground hover:text-cyber-purple transition-colors">
             Challenges
@@ -42,14 +42,17 @@ const Navbar: React.FC = () => {
             Learn
           </Link>
           <div className="h-6 w-px bg-cyber-gray/20"></div>
-          <Button variant="outline" className="flex items-center gap-2 border-cyber-purple/30 text-cyber-purple hover:bg-cyber-purple/10">
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2 border-cyber-purple/30 text-cyber-purple hover:bg-cyber-purple/10"
+            onClick={() => setIsSignInOpen(true)}
+          >
             <User className="h-4 w-4" />
             Sign In
           </Button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 z-50 bg-cyber-dark/95 backdrop-blur-md pt-16">
           <div className="container flex flex-col items-center gap-8 py-8">
