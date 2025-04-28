@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flag, Menu, User, Trophy, BookOpen, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SignInDialog } from '../auth/SignInDialog';
+import { ThemeToggle } from '../ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +44,7 @@ const Navbar: React.FC = () => {
             Learn
           </Link>
           <div className="h-6 w-px bg-cyber-gray/20"></div>
+          <ThemeToggle />
           <Button 
             variant="outline" 
             className="flex items-center gap-2 border-cyber-purple/30 text-cyber-purple hover:bg-cyber-purple/10"
